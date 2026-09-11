@@ -18,13 +18,13 @@ export const Founding = () => {
     {
       title: `${founding.seeds} seeds`,
       description:
-        "Trees, bushes, grass, rocks and the rest, spread across the rooms so nobody arrives to bare ground.",
+        "Trees, bushes, grass, rocks and the rest, spread across the rooms so nobody arrives to bare ground. None of them are in the circle.",
       icon: <Sprout className="text-brand size-6" />,
     },
     {
       title: `${founding.stones} founding stones`,
       description:
-        "Standing stones placed by us at launch. They count as placements like everything else.",
+        "The first four contributions to the stone circle. Four of its eight slots are built and four show a stake, so the blueprint arrives half done and asks for a fifth.",
       icon: <Milestone className="text-brand size-6" />,
     },
     {

@@ -16,6 +16,10 @@ npm run dev
 
 Every render on the page is declared in `constants/images.ts` and lives under `public/images/`. Replace the file, keep the name, and clear the `pending` flag. `og.png` (1200×630) is the share card and `logo.png` (480×480) is the submission logo.
 
+## Deploy
+
+Vercel, framework preset Next.js, no special settings. Set `NEXT_PUBLIC_WEBSITE_URL=https://trellis.0xo.in` in the project's environment variables so canonical links and the share card resolve to the real domain. Point `trellis` at Vercel with a CNAME to `cname.vercel-dns.com`.
+
 ## Adding registry components
 
 `components.json` points the shadcn CLI at the Aceternity registry and reads the key from `ACETERNITY_UI_API_KEY` in the environment:

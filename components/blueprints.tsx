@@ -7,6 +7,7 @@ import { SubHeading } from "./subheading";
 import { AnimatePresence, motion } from "motion/react";
 import { DivideX } from "./divide";
 import { propIcons } from "./prop-icons";
+import { founding } from "@/constants/site";
 import {
   Fence,
   Footprints,
@@ -51,9 +52,9 @@ export const Blueprints = () => {
       icon: <Users className="text-brand size-6" />,
     },
     {
-      title: "Marked out on the terrace",
+      title: "Four of eight built",
       description:
-        "Stakes and a sign stand where the circle goes, so an unfinished one still reads as something waiting to happen.",
+        "At launch four slots hold our founding stones and four show a gold stake with a glowing disc. The sign says so. The circle is a demonstration of the mechanic, not a finished ornament.",
       icon: <Fence className="text-brand size-6" />,
     },
   ];
@@ -89,14 +90,14 @@ export const Blueprints = () => {
 };
 
 /*
-  The circle filling over days. Purely illustrative: the count cycles from
-  one stone to eight and back, it is not the live state of the garden.
+  The circle filling over days. Starts from the four founding stones and
+  counts up to eight, then resets. Illustrative, not the live state.
 */
 const MiddleCard = () => {
-  const [filled, setFilled] = useState(1);
+  const [filled, setFilled] = useState(founding.stones);
   useEffect(() => {
     const interval = setInterval(() => {
-      setFilled((prev) => (prev % SLOTS) + 1);
+      setFilled((prev) => (prev >= SLOTS ? founding.stones : prev + 1));
     }, 1800);
     return () => clearInterval(interval);
   }, []);
@@ -118,7 +119,7 @@ const MiddleCard = () => {
             transition={{ duration: 0.3 }}
             className="shadow-aceternity font-mono rounded-sm bg-white px-2 py-1 text-xs text-gray-600 dark:bg-neutral-700 dark:text-white"
           >
-            day {filled} · {filled} of {SLOTS}
+            {filled === founding.stones ? "launch" : `day ${filled - founding.stones}`} · {filled} of {SLOTS}
           </motion.span>
         </AnimatePresence>
       </div>

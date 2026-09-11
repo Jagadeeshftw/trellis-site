@@ -21,7 +21,7 @@ export const faqs = [
   {
     question: "What is a blueprint?",
     answer:
-      "A structure too big for one person. The stone circle on the upper terrace has eight slots. Spending your daily placement on a slot adds one stone, so the circle is only finished if several people come back over several days.",
+      "A structure too big for one person. The stone circle on the upper terrace has eight slots. Spending your daily placement on a slot adds one stone, so the circle is only finished if several people come back over several days. It launched with four slots filled by our founding stones and four open.",
   },
   {
     question: "What do I need to visit?",
@@ -36,6 +36,6 @@ export const faqs = [
   {
     question: "Who planted the garden that is already there?",
     answer:
-      'We did. At launch the garden held 320 seeds and 4 founding stones, 324 placements in all, placed by us and attributed to "Founding garden". Anything not attributed to "Founding garden" was planted by a visitor.',
+      'We did. At launch the garden held 320 seeds and 4 founding stones, 324 placements in all, placed by us and attributed to "Founding garden". The four stones are the filled slots of the stone circle. Anything not attributed to "Founding garden" was planted by a visitor.',
   },
 ];
