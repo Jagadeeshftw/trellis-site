@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/*
+  Trellis palette. Only colour tokens differ from the template:
+  hedge green for the accent, soil and timber browns for the charcoal
+  scale, cream and sage tints for the greys, pink sky for highlights.
+  The neutral scale is remapped so dark mode reads as a hedge at dusk
+  without touching any component class.
+*/
+@theme {
+  --font-primary: var(--font-inter-display), "Inter Display", Inter, sans-serif;
+  --font-mono: var(--font-dm-mono), "DM Mono", monospace;
+
+  --color-white: #fbfaf5;
+
+  --color-charcoal-900: #2b1d12;
+  --color-charcoal-800: #3d2a1b;
+  --color-charcoal-700: #4a3421;
+
+  --color-gray-50: #f9f8f2;
+  --color-gray-100: #f5f3eb;
+  --color-gray-200: #eeebe0;
+  --color-gray-300: #dde2d3;
+  --color-gray-400: #c7ceba;
+  --color-gray-500: #a6b099;
+  --color-gray-600: #66705d;
+  --color-gray-700: #4f5847;
+  --color-gray-800: #3a4234;
+  --color-gray-900: #262c22;
+
+  --color-neutral-50: #f3f4ee;
+  --color-neutral-100: #e6e9df;
+  --color-neutral-200: #cfd5c5;
+  --color-neutral-300: #aab39f;
+  --color-neutral-400: #7f8a75;
+  --color-neutral-500: #5f6b56;
+  --color-neutral-600: #3f4d39;
+  --color-neutral-700: #2c3a29;
+  --color-neutral-800: #1c2b1e;
+  --color-neutral-900: #142016;
+  --color-neutral-950: #0c160f;
+
+  --color-brand: #2f6b3a;
+  --color-hedge-600: #2f6b3a;
+  --color-hedge-700: #245430;
+  --color-hedge-800: #1a3d24;
+  --color-soil: #5a4029;
+  --color-timber: #8a6a4a;
+  --color-sage: #9fb08f;
+  --color-sky-pink: #efc5c0;
+  --color-sky-pink-light: #f7e1de;
+
+  --shadow-aceternity:
+    0px 2px 3px -1px rgba(43, 29, 18, 0.1),
+    0px 1px 0px 0px rgba(43, 29, 18, 0.03),
+    0px 0px 0px 1px rgba(43, 29, 18, 0.08);
+
+  --background-repeating-gradient: radial-gradient(
+    var(--color-gray-300) 1px,
+    transparent 1px
+  );
+  --repeat-gradient-size: 10px 10px;
+
+  --animate-orbit: orbit 24s linear infinite;
+  --animate-counter-orbit: counter-orbit 24s linear infinite;
+
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes counter-orbit {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+:root {
+  --divide: var(--color-gray-300);
+  --primary: var(--color-charcoal-900);
+  --canvas: var(--color-sage);
+  --canvas-fill: var(--color-gray-300);
+  --dots: var(--color-gray-300);
+  --line: var(--color-neutral-200);
+  --footer-link: #66705d;
+}
+
+.dark {
+  --divide: var(--color-neutral-800);
+  --primary: var(--color-neutral-100);
+  --canvas: var(--color-neutral-200);
+  --canvas-fill: var(--color-neutral-800);
+  --dots: var(--color-neutral-800);
+  --line: var(--color-neutral-700);
+  --footer-link: var(--color-neutral-300);
+}
+
+@theme inline {
+  --color-divide: var(--divide);
+  --color-primary: var(--primary);
+  --color-canvas: var(--canvas);
+  --color-canvas-fill: var(--canvas-fill);
+  --color-dots: var(--dots);
+  --color-line: var(--line);
+  --color-footer-link: var(--footer-link);
+}
