@@ -111,7 +111,7 @@ export const HowItWorks = () => {
               </button>
             ))}
           </div>
-          <div className="relative h-full max-h-[370px] overflow-hidden bg-[radial-gradient(var(--color-dots)_1px,transparent_1px)] mask-r-from-90% mask-l-from-90% mask-radial-from-20% [background-size:10px_10px]">
+          <div className="relative h-full max-h-[370px] overflow-hidden bg-[radial-gradient(var(--color-dots)_1px,transparent_1px)] [background-size:10px_10px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab.id}
@@ -139,7 +139,7 @@ export const HowItWorks = () => {
               <p className="relative z-20 mt-2 text-left text-sm text-gray-600 dark:text-neutral-300">
                 {tab.description}
               </p>
-              <div className="relative mx-auto h-80 w-full overflow-hidden mask-t-from-90% mask-r-from-90% mask-b-from-90% mask-l-from-90% sm:h-80 sm:w-160">
+              <div className="relative mx-auto h-80 w-full overflow-hidden sm:h-80 sm:w-160">
                 {tab.skeleton}
               </div>
             </div>
